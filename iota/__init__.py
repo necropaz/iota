@@ -1,1 +1,1 @@
-import iota
+from iota import iota
