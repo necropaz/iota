@@ -14,22 +14,31 @@ When you run an instance from the iota class you have special values which let y
 To install the package it is very easy if you have installed pip.
 
 ```ShellSession
-sudo pip install iota
+$ sudo pip install iota
 ```
 
-### Installation:
+## running instance
 
-For a step by step tutorial go to necropaz.github.io (will follow later)
+1. First you have to import the package 
+```Python
+from iota import iota
+```
 
-## IOTA Weather Client
+2. Now you can run an instance 
+```Python
+node=iota("HIERCOMESMYSEED")
+```
 
-### Installation:
+3. Access your iota 
+```Python
+node.searchNewTransaction()
+print (node.error)
+print (node.txCounter)
+```
 
-For a step by step tutorial go to necropaz.github.io (will follow later)
+## package functions
 
-## Python package functions
-
-### `sendMessage(seed, address, message, value)`
+### `sendMessage(address, message, value)`
 
 Send a message to a specified Adress.
 
@@ -42,7 +51,7 @@ Direction |Parameters | Type | Required | Description
 
 ### `sendRequest(command)`
 
-Send a request to the IOTA Node and return the andswer.
+Send a request to the IOTA Node and return the answer.
 
 Direction |Parameters | Type | Required | Description
 ------------ |------------ | ------------- | ------------- | -------------
