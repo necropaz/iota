@@ -97,13 +97,14 @@ class iota:
 			print(self.error)
 			return None
 
-	def checkConformation(self, transaction, i=0 ):
-		self.bundle=self.sendRequest({'command':'getBundle', 'transaction': transaction})
+	def checkConfirmed(self):
+		self.transaction=self.sendRequest({'command':'getTransfers', 'seed': self.seed, 'securityLevel': 1})
 		try:
-			self.persistence=self.bundle['transactions'][i]['persistence']
+			self.i=len(self.transaction['transfers'])-1
+			self.persistence=self.transaction['transfers'][self.i]['persistence']
 			return self.persistence
 		except Exception as e:
-			self.error="No Message with this transaction."+str(e)
+			self.error="Can't confirm the transaction."+str(e)
 			print(self.error)
 			return None
 
@@ -114,7 +115,7 @@ class iota:
 			self.data=self.sendRequest(self.command)
 			if len(self.data)==2:
 				break
-			sel.error="The tangle is not solid."
+			self.error="The tangle is not solid."
 		return self.data
 
 	def genAddress(self):
@@ -125,7 +126,7 @@ class iota:
 				self.address=self.data['address']
 				break
 			except:
-				sel.error="The tangle is not solid."
+				self.error="The tangle is not solid."
 		return self.address
 
 	def byteToTryte(self, byte):
