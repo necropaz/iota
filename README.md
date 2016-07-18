@@ -18,18 +18,17 @@ $ sudo pip install iota
 ```
 
 ## running instance
-
-1. First you have to import the package 
+- First you have to import the package 
 ```Python
 from iota import iota
 ```
 
-2. Now you can run an instance 
+- Now you can run an instance 
 ```Python
 node=iota("HIERCOMESMYSEED")
 ```
 
-3. Access your iota 
+- Access your iota 
 ```Python
 node.searchNewTransaction()
 print (node.error)
