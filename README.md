@@ -6,8 +6,8 @@ When you run an instance from the iota class you have special values which let y
 
 ## What I need to run an iota instance?
 
--[] Install the latest IOTA release from : [IOTA Node](https://github.com/IOTAledger/iota-gui-beta/releases)
--[] the python package sys, json, urllib2 and os are required
+- [ ] Install the latest IOTA release from : [IOTA Node](https://github.com/IOTAledger/iota-gui-beta/releases)
+- [ ] the python package sys, json, urllib2 and os are required
 
 ## Installation
 
